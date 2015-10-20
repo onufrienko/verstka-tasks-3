@@ -1,0 +1,83 @@
+body {
+	width: 100%;
+}
+h1 {
+	text-align: center;
+}
+section {
+	margin-left: 5%;
+}
+/* Для таблицы */
+img {
+	width: 85%;
+	height: 40px;
+}
+div.table {
+	display: table;
+	width: 90%;
+	margin-top: 2%;
+	border-spacing: 0;    
+    overflow: hidden;
+}
+div.tr {
+	display: table-row;
+}
+.table>.thead>.tr {
+	background-color: #ffe066;
+}
+div.td, div.th {
+	display: table-cell;
+	width: 10%;
+	padding: 5px;
+	text-align: center;
+	vertical-align: middle;
+}
+.td {
+    position: relative;
+}
+.tr:hover {
+    padding: 20px;
+    background-color: #ffe066 !important;
+}
+.tr:nth-child(odd) .td:first-child::before {
+    content: "";
+    position: absolute;
+    background-color: #fff5c2;
+    top: 0;
+    left: -5000px;
+    width: 10000px;
+    height: 100%;
+    z-index: -10;
+}
+.td:hover::after {
+    content: "";
+    position: absolute;
+    background-color: #ffe066;
+    left: 0;
+    top: -5000px;
+    height: 10000px;
+    width: 100%;
+    z-index: -1;
+}
+/* Для формы */
+form {
+	width:40%;
+	margin: auto;
+	margin-top: 5%;	
+	margin-bottom: 5%;
+}
+fieldset {
+	background-color: #fff5c2;
+}
+legend {
+	font-weight: bold;
+}
+input {
+	margin: 2% auto;
+}
+button {
+    display: none;
+}
+input[type="email"]:valid + br + label + input[type="tel"]:valid + button{
+   display:block;
+}
