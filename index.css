@@ -9,35 +9,30 @@ section {
 }
 /* Для таблицы */
 img {
-	width: 85%;
-	height: 40px;
+	height: 50px;
 }
-div.table {
-	display: table;
-	width: 90%;
-	margin-top: 2%;
-	border-spacing: 0;    
+.table {
+    display: table;
+    width: 90%;
+    margin-top: 2%;
+    border-spacing: 0;    
     overflow: hidden;
+    border: 1px solid yellow;
 }
-div.tr {
-	display: table-row;
-}
-.table>.thead>.tr {
-	background-color: #ffe066;
-}
-div.td, div.th {
-	display: table-cell;
-	width: 10%;
-	padding: 5px;
-	text-align: center;
-	vertical-align: middle;
+.tr {
+    display: table-row;
 }
 .td {
+    display: table-cell;
+    width: 10%;
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
     position: relative;
 }
 .tr:hover {
     padding: 20px;
-    background-color: #ffe066 !important;
+    background-color: #ffe066;
 }
 .tr:nth-child(odd) .td:first-child::before {
     content: "";
@@ -59,12 +54,15 @@ div.td, div.th {
     width: 100%;
     z-index: -1;
 }
+.tr:first-child {
+    background-color: #ffe066;
+}
 /* Для формы */
 form {
 	width:40%;
 	margin: auto;
-	margin-top: 5%;	
-	margin-bottom: 5%;
+	margin-top: 50px;	
+	margin-bottom: 50px;
 }
 fieldset {
 	background-color: #fff5c2;
@@ -78,6 +76,41 @@ input {
 button {
     display: none;
 }
-input[type="email"]:valid + br + label + input[type="tel"]:valid + button{
+form > fieldset > label {
+	display: block;
+}
+input[type="email"]:valid + label + input[type="tel"]:valid + button{
    display:block;
+}
+/* Фильтры */
+input {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#depar:checked ~ div > div.arr {
+	display: none;
+}
+#depar:checked ~ div > div.dep {
+	background-color: white;
+}
+#arriv:checked ~ div > div.dep {
+	display: none;
+}
+#arriv:checked ~ div > div.arr {
+	background-color: white;
+}
+#C:not(:checked) ~ div > div.C {
+	display: none;
+}
+#D:not(:checked) ~ div > div.D {
+	display: none;
+}
+#E:not(:checked) ~ div > div.E {
+	display: none;
+}
+#F:not(:checked) ~ div > div.F {
+	display: none;
+}
+input[type="checkbox"]:not(:checked) ~ div > div.tr:not(:first-child) {
+	background-color: white;
 }
